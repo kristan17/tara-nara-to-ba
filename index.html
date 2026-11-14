@@ -11,94 +11,156 @@
   --coral:#ff6b6b;--teal:#14b8a6;--violet:#8b5cf6;--amber:#f59e0b;
   --ink:#2b2140;--mut:#6b6480;--card:#ffffff;--line:#ece8f7;
   --ok:#10b981;--bad:#f43f5e;
-  --display:'Nunito','Noto Sans JP',system-ui,sans-serif;
-  --body:'Nunito','Noto Sans JP',system-ui,sans-serif;
+  --font:'Nunito','Noto Sans JP',system-ui,sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{font-family:var(--body);color:var(--ink);-webkit-font-smoothing:antialiased}
-body{min-height:100vh;padding:env(safe-area-inset-top,0px) 18px env(safe-area-inset-bottom,0px);
+html{font-family:var(--font);color:var(--ink);-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%}
+body{min-height:100vh;padding:env(safe-area-inset-top,0px) 16px env(safe-area-inset-bottom,0px);
   background:
    radial-gradient(900px 500px at 10% -10%,#ffd6e0 0%,transparent 60%),
    radial-gradient(800px 500px at 100% 0%,#c7f9f0 0%,transparent 55%),
    radial-gradient(700px 600px at 50% 110%,#e9d5ff 0%,transparent 60%),
    #fffaf5}
-.wrap{max-width:1040px;margin:0 auto;padding:52px 0 70px}
-header{text-align:center;margin-bottom:40px}
+.wrap{max-width:1040px;margin:0 auto;padding:48px 0 60px}
+header{text-align:center;margin-bottom:34px}
 .chips{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
-.chip{font-family:var(--display);font-weight:900;font-size:clamp(26px,4.5vw,40px);color:#fff;padding:10px 22px;border-radius:20px;box-shadow:0 10px 24px -8px rgba(43,33,64,.35);transform:rotate(-2deg);transition:transform .3s}
+.chip{font-weight:900;font-size:clamp(26px,4.5vw,40px);color:#fff;padding:10px 22px;border-radius:20px;box-shadow:0 10px 24px -8px rgba(43,33,64,.35);transform:rotate(-2deg);transition:transform .3s}
 .chip:nth-child(2){transform:rotate(2deg)}
 .chip:nth-child(3){transform:rotate(-1deg)}
 .chip:nth-child(4){transform:rotate(2.5deg)}
 .chip:hover{transform:rotate(0) scale(1.06)}
 .c1{background:var(--coral)}.c2{background:var(--teal)}.c3{background:var(--violet)}.c4{background:var(--amber)}
-h1{font-family:var(--display);font-weight:900;font-size:clamp(24px,4vw,34px);margin-top:26px;letter-spacing:-.01em}
+h1{font-weight:900;font-size:clamp(23px,4vw,34px);margin-top:24px;letter-spacing:-.01em}
 .sub{color:var(--mut);margin-top:8px;font-size:16px;font-weight:600}
-nav{display:flex;justify-content:center;gap:10px;margin:0 auto 36px;flex-wrap:wrap;background:#fff;border-radius:999px;padding:6px;max-width:460px;box-shadow:0 8px 30px -12px rgba(43,33,64,.25)}
-nav button{flex:1;border:none;background:none;color:var(--mut);padding:12px 18px;border-radius:999px;cursor:pointer;font:inherit;font-weight:800;font-size:15px;transition:.25s}
+nav{display:flex;justify-content:center;gap:6px;margin:0 auto 32px;background:#fff;border-radius:999px;padding:6px;max-width:460px;box-shadow:0 8px 30px -12px rgba(43,33,64,.25)}
+nav button{flex:1;border:none;background:none;color:var(--mut);padding:12px 14px;border-radius:999px;cursor:pointer;font:inherit;font-weight:800;font-size:15px;transition:.25s;min-height:46px}
 nav button.on{background:linear-gradient(135deg,var(--coral),var(--violet));color:#fff;box-shadow:0 6px 16px -6px var(--violet)}
 section{display:none;animation:up .5s ease}
 section.on{display:block}
 @keyframes up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+ruby{ruby-position:over}
+rt{font-size:.45em;color:var(--mut);font-weight:700;line-height:1;letter-spacing:0}
+/* theory */
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(440px,1fr));gap:24px}
-.card{background:var(--card);border-radius:24px;padding:0;overflow:hidden;box-shadow:0 14px 40px -18px rgba(43,33,64,.25);border:1px solid var(--line);display:flex;flex-direction:column}
+.card{background:var(--card);border-radius:24px;overflow:hidden;box-shadow:0 14px 40px -18px rgba(43,33,64,.25);border:1px solid var(--line);display:flex;flex-direction:column}
 .band{padding:26px 28px;color:#fff;background:var(--c);position:relative;overflow:hidden}
 .band::after{content:"";position:absolute;right:-40px;top:-40px;width:150px;height:150px;border-radius:50%;background:rgba(255,255,255,.18)}
-.sym{font-family:var(--display);font-weight:900;font-size:50px;line-height:1}
+.sym{font-weight:900;font-size:50px;line-height:1.1}
 .name{font-weight:800;font-size:15px;margin-top:8px;opacity:.95}
 .body{padding:24px 28px 28px}
 .body p{font-size:15.5px;line-height:1.75;color:#413a55}
 .body h4{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--c);margin:18px 0 8px;font-weight:900}
 .body ul{list-style:none}
 .body li{font-size:15px;line-height:1.65;padding:6px 0 6px 26px;position:relative;color:#413a55}
-.body li::before{content:"";position:absolute;left:4px;top:14px;width:10px;height:10px;border-radius:50%;background:var(--c)}
+.body li::before{content:"";position:absolute;left:4px;top:15px;width:10px;height:10px;border-radius:50%;background:var(--c)}
 .ex{margin-top:18px;background:color-mix(in srgb,var(--c) 12%,#fff);border-radius:16px;padding:16px 18px}
-.ex .jp{font-size:18px;font-weight:700}
-.ex .ru{font-size:14px;color:var(--mut);margin-top:6px;font-weight:600}
+.ex .jp{font-size:18px;font-weight:700;line-height:2.1}
+.ex .ru{font-size:14px;color:var(--mut);margin-top:4px;font-weight:600}
 .warn{margin-top:16px;font-size:14.5px;line-height:1.6;color:#8a2440;background:#fff1f3;padding:12px 14px;border-radius:12px}
-ruby{ruby-position:over}rt{font-size:.5em;color:var(--mut);font-weight:600}
 /* compare */
-.cmp{background:#fff;border-radius:24px;padding:28px;box-shadow:0 14px 40px -18px rgba(43,33,64,.25);border:1px solid var(--line);overflow-x:auto}
-table{width:100%;border-collapse:separate;border-spacing:0 8px;font-size:15px;min-width:620px}
-th{padding:10px;font-family:var(--display);font-weight:900;font-size:18px;color:#fff;border-radius:12px}
-th.h1{background:var(--coral)}th.h2{background:var(--teal)}th.h3{background:var(--violet)}th.h4{background:var(--amber)}
-td{padding:14px 12px;background:#faf8ff;text-align:center;line-height:1.5;font-weight:600}
-td:first-child{text-align:left;font-weight:900;color:var(--ink);background:none}
-.yes{color:var(--ok);font-weight:900}.no{color:var(--bad);font-weight:900}
-.algo{margin-top:30px;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
-.step{border-radius:18px;padding:20px;color:#fff;background:var(--c);box-shadow:0 10px 24px -14px var(--c)}
-.step b{font-family:var(--display);font-weight:900;font-size:22px;display:block;margin-bottom:8px}
-.step span{font-size:15px;line-height:1.5;font-weight:600}
+.cmpgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.cc{background:#fff;border-radius:22px;overflow:hidden;border:1px solid var(--line);box-shadow:0 12px 30px -18px rgba(43,33,64,.25)}
+.cc-h{background:var(--c);color:#fff;padding:18px 20px}
+.cc-h b{display:block;font-size:30px;font-weight:900;line-height:1.1}
+.cc-h span{font-size:14px;font-weight:700;opacity:.95}
+.cc-b{padding:12px 20px 18px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 0;border-bottom:1px dashed var(--line);font-size:14.5px;font-weight:700;color:#413a55}
+.row:last-child{border-bottom:none}
+.tag{font-size:13px;font-weight:900;padding:5px 11px;border-radius:99px;white-space:nowrap}
+.y{background:#d1fae5;color:#065f46}.n{background:#ffe4e6;color:#9f1239}.m{background:#fef3c7;color:#92400e}
+.cc-ex{margin-top:12px;background:color-mix(in srgb,var(--c) 10%,#fff);border-radius:14px;padding:12px 14px;font-size:14.5px;line-height:1.6;font-weight:600;color:#413a55}
+.legend{margin-top:26px;background:#fff;border-radius:20px;padding:22px 24px;border:1px solid var(--line);box-shadow:0 12px 30px -18px rgba(43,33,64,.25)}
+.legend h3{font-weight:900;font-size:18px;margin-bottom:12px}
+.legend ol{padding-left:22px;font-size:15.5px;line-height:1.8;font-weight:600;color:#413a55}
+.legend li b{color:var(--ink)}
 /* quiz */
 .qwrap{max-width:760px;margin:0 auto}
 .prog{display:flex;justify-content:space-between;font-weight:800;color:var(--mut);margin-bottom:12px;font-size:15px}
-.bar{height:12px;background:#fff;border-radius:99px;margin-bottom:28px;overflow:hidden;box-shadow:inset 0 2px 6px rgba(43,33,64,.1)}
+.bar{height:12px;background:#fff;border-radius:99px;margin-bottom:26px;overflow:hidden;box-shadow:inset 0 2px 6px rgba(43,33,64,.1)}
 .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--coral),var(--amber),var(--teal),var(--violet));border-radius:99px;transition:width .5s}
-.qcard{background:#fff;border-radius:28px;padding:38px 34px;box-shadow:0 20px 50px -22px rgba(43,33,64,.3);border:1px solid var(--line)}
-.qtext{font-size:clamp(20px,3vw,25px);line-height:1.8;font-weight:700;margin-bottom:26px;min-height:80px}
-.blank{display:inline-block;min-width:76px;border-bottom:4px solid var(--violet);color:transparent;margin:0 2px}
-.opts{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.opt{border:2px solid var(--line);background:#fff;color:var(--ink);padding:16px 18px;border-radius:16px;font:inherit;font-size:18px;font-weight:800;cursor:pointer;text-align:left;transition:.2s;display:flex;align-items:center;gap:12px}
-.opt .k{width:30px;height:30px;border-radius:10px;display:grid;place-items:center;background:#f3f0ff;color:var(--violet);font-size:14px;flex:none}
-.opt:hover:not(:disabled){transform:translateY(-2px);border-color:var(--violet);box-shadow:0 10px 20px -12px var(--violet)}
+.qcard{background:#fff;border-radius:28px;padding:34px 30px;box-shadow:0 20px 50px -22px rgba(43,33,64,.3);border:1px solid var(--line)}
+.qtext{font-size:clamp(19px,3vw,24px);line-height:2.3;font-weight:700;margin-bottom:22px}
+.blank{display:inline-block;min-width:70px;border-bottom:4px solid var(--violet);color:transparent;margin:0 2px;vertical-align:baseline}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.opt{border:2px solid var(--line);background:#fff;color:var(--ink);padding:14px 16px;border-radius:16px;font:inherit;font-size:18px;font-weight:800;cursor:pointer;text-align:left;transition:.2s;display:flex;align-items:center;gap:12px;min-height:60px;line-height:2}
+.opt .k{width:30px;height:30px;border-radius:10px;display:grid;place-items:center;background:#f3f0ff;color:var(--violet);font-size:14px;flex:none;line-height:1}
+.opt .t{flex:1}
+.opt:hover:not(:disabled){border-color:var(--violet);box-shadow:0 10px 20px -12px var(--violet)}
 .opt:disabled{cursor:default}
 .opt.right{border-color:var(--ok);background:#ecfdf5;color:#065f46}
 .opt.right .k{background:var(--ok);color:#fff}
 .opt.wrong{border-color:var(--bad);background:#fff1f2;color:#9f1239}
 .opt.wrong .k{background:var(--bad);color:#fff}
-.fb{margin-top:24px;padding:20px 22px;border-radius:18px;font-size:15.5px;line-height:1.75;display:none;color:#3b3450}
+.fb{margin-top:22px;padding:18px 20px;border-radius:18px;font-size:15.5px;line-height:1.75;display:none;color:#3b3450}
 .fb.show{display:block;animation:up .4s ease}
 .fb.ok{background:#ecfdf5;border-left:6px solid var(--ok)}
-.fb.no{background:#fff1f2;border-left:6px solid var(--bad);color:#3b3450}
+.fb.no{background:#fff1f2;border-left:6px solid var(--bad)}
 .fb strong{font-weight:900}
-.fb ul{margin-top:8px;padding-left:18px}
-.nextbtn{margin-top:20px;float:right;background:linear-gradient(135deg,var(--coral),var(--violet));color:#fff;border:none;padding:14px 30px;border-radius:999px;font:inherit;font-weight:900;font-size:16px;cursor:pointer;display:none;box-shadow:0 10px 22px -10px var(--violet)}
-.nextbtn.show{display:inline-block}
+.fb .ans{font-size:17px;line-height:2}
+.nextbtn{margin-top:18px;width:100%;background:linear-gradient(135deg,var(--coral),var(--violet));color:#fff;border:none;padding:16px 24px;border-radius:16px;font:inherit;font-weight:900;font-size:17px;cursor:pointer;display:none;box-shadow:0 10px 22px -10px var(--violet);min-height:54px}
+.nextbtn.show{display:block}
 .result{text-align:center;padding:24px 8px}
-.result .big{font-family:var(--display);font-weight:900;font-size:76px;background:linear-gradient(135deg,var(--coral),var(--violet));-webkit-background-clip:text;color:transparent}
+.result .big{font-weight:900;font-size:76px;background:linear-gradient(135deg,var(--coral),var(--violet));-webkit-background-clip:text;color:transparent}
 .result p{color:#413a55;font-size:17px;line-height:1.7;max-width:560px;margin:14px auto 0;font-weight:600}
-.restart{margin-top:26px;background:var(--teal);color:#fff;border:none;padding:14px 32px;border-radius:999px;font:inherit;font-weight:900;cursor:pointer;font-size:16px;box-shadow:0 10px 22px -10px var(--teal)}
-footer{text-align:center;margin-top:60px;color:var(--mut);font-weight:800;font-size:15px}
-@media(max-width:640px){.grid{grid-template-columns:1fr}.opts{grid-template-columns:1fr}.qcard{padding:26px 20px}.wrap{padding-top:34px}.band{padding:22px}.body{padding:20px}}
+.restart{margin-top:26px;background:var(--teal);color:#fff;border:none;padding:14px 32px;border-radius:999px;font:inherit;font-weight:900;cursor:pointer;font-size:16px;box-shadow:0 10px 22px -10px var(--teal);min-height:50px}
+footer{text-align:center;margin-top:50px;color:var(--mut);font-weight:800;font-size:15px}
+@media(max-width:640px){
+  .wrap{padding-top:28px}
+  .grid{grid-template-columns:1fr}
+  .band{padding:22px}.body{padding:20px}
+  .sym{font-size:44px}
+  .cmpgrid{grid-template-columns:1fr}
+  .qcard{padding:24px 16px;border-radius:24px}
+  .qtext{font-size:19px;line-height:2.2}
+  .opts{grid-template-columns:1fr;gap:10px}
+  .opt{font-size:17px;padding:12px 14px}
+  nav button{font-size:14px;padding:12px 8px}
+}
+.hint{font-size:14px;color:var(--mut);font-weight:700;margin:-8px 0 16px;line-height:1.5}
+
+.hint{display:none}
+@keyframes slideIn{from{opacity:0;transform:translateX(30px)}to{opacity:1;transform:none}}
+@keyframes popIn{from{opacity:0;transform:scale(.92) translateY(10px)}to{opacity:1;transform:none}}
+@keyframes okPulse{0%{transform:scale(1)}40%{transform:scale(1.06)}100%{transform:scale(1)}}
+@keyframes shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-8px)}40%{transform:translateX(8px)}60%{transform:translateX(-5px)}80%{transform:translateX(4px)}}
+@keyframes shine{0%{background-position:-200% 0}100%{background-position:200% 0}}
+@keyframes chipIn{from{opacity:0;transform:translateY(-14px) scale(.8)}to{opacity:1;transform:none}}
+@keyframes fall{to{transform:translateY(110vh) rotate(540deg);opacity:0}}
+.chip{animation:chipIn .6s cubic-bezier(.2,.8,.2,1) both}
+.chip:nth-child(2){animation-delay:.1s}.chip:nth-child(3){animation-delay:.2s}.chip:nth-child(4){animation-delay:.3s}
+.qtext{animation:slideIn .5s cubic-bezier(.2,.8,.2,1) both}
+.opt{animation:popIn .45s cubic-bezier(.2,.8,.2,1) both;transition:transform .2s,border-color .2s,box-shadow .2s,background .2s}
+.opt:nth-child(2){animation-delay:.07s}.opt:nth-child(3){animation-delay:.14s}.opt:nth-child(4){animation-delay:.21s}
+.opt:hover:not(:disabled){transform:translateY(-3px)}
+.opt:active:not(:disabled){transform:scale(.98)}
+.opt.right{animation:okPulse .6s ease;box-shadow:0 0 0 4px rgba(16,185,129,.22)}
+.opt.wrong{animation:shake .5s ease}
+.opt .k{transition:transform .3s}
+.opt.right .k{transform:rotate(360deg)}
+.fb.show{animation:popIn .5s cubic-bezier(.2,.8,.2,1) both}
+.full{font-size:20px;font-weight:800;line-height:2.1;margin-top:14px;padding:12px 14px;border-radius:14px;background:linear-gradient(90deg,#ffe4e6,#ede9fe,#ccfbf1);background-size:0% 100%;background-repeat:no-repeat;animation:fillHl .9s .25s ease forwards}
+@keyframes fillHl{to{background-size:100% 100%}}
+.tr{margin-top:12px;font-size:16px;line-height:1.6;color:#413a55;font-weight:700}
+.tr span{display:inline-block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--violet);font-weight:900;margin-right:10px}
+.ex-t{margin-top:12px}
+.nextbtn.show{animation:popIn .5s .25s both}
+.nextbtn:hover{transform:translateY(-2px)}
+.bar i{background-size:200% 100%;animation:shine 2.2s linear infinite}
+.result .big{animation:popIn .8s cubic-bezier(.2,.8,.2,1) both}
+.conf{position:fixed;top:-30px;font-size:22px;animation:fall 2.8s ease-in forwards;pointer-events:none;z-index:99}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+.verdict{display:inline-block;font-weight:900;font-size:17px;padding:8px 18px;border-radius:999px;margin-bottom:4px;animation:popIn .5s cubic-bezier(.2,.8,.2,1) both}
+.vok{background:#d1fae5;color:#065f46}.vno{background:#ffe4e6;color:#9f1239}
+.fb .full{margin-top:14px}
+.tr-card{margin-top:14px;background:#fff;border-radius:16px;padding:16px 18px;border-left:5px solid var(--violet);box-shadow:0 8px 20px -14px var(--violet);animation:slideIn .6s .15s cubic-bezier(.2,.8,.2,1) both}
+.tr-lab{display:inline-block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--violet);font-weight:900;margin-bottom:4px}
+.tr-card p{font-size:18px;line-height:1.6;font-weight:800;color:var(--ink)}
+.why{margin-top:18px}
+.why-h{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);font-weight:900;margin-bottom:10px}
+.pt{position:relative;padding:12px 14px 12px 40px;margin-bottom:8px;background:#fff;border-radius:14px;font-size:16px;line-height:1.75;color:#413a55;font-weight:600;animation:popIn .5s cubic-bezier(.2,.8,.2,1) both}
+.pt::before{content:"";position:absolute;left:16px;top:20px;width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,var(--coral),var(--violet))}
+.pt b{color:var(--violet);font-weight:900}
 </style>
 </head>
 <body>
@@ -128,9 +190,9 @@ footer{text-align:center;margin-top:60px;color:var(--mut);font-weight:800;font-s
         <li>одно конкретное событие в будущем: «когда приеду домой»</li>
         <li>просьбы, советы и инструкции, которые нужно выполнить после действия</li>
         <li>гипотеза о конкретной ситуации: «если выиграю»</li>
-        <li>неожиданное событие в прошлом: «пришёл домой — а там дождь»</li>
+        <li>неожиданное событие в прошлом: «пришёл домой, а там дождь»</li>
       </ul>
-      <div class="ex"><div class="jp"><ruby>駅<rt>えき</rt></ruby>に着いたら、<ruby>電話<rt>でんわ</rt></ruby>してください。</div><div class="ru">Когда приедете на вокзал, позвоните мне.</div></div>
+      <div class="ex"><div class="jp"><ruby>駅<rt>えき</rt></ruby>に<ruby>着<rt>つ</rt></ruby>いたら、<ruby>電話<rt>でんわ</rt></ruby>してください。</div><div class="ru">Когда приедете на вокзал, позвоните мне.</div></div>
       <div class="warn"><b>Особенность:</b> единственная из четырёх форм, которая спокойно работает с просьбами и приказами.</div>
     </div>
   </div>
@@ -143,10 +205,10 @@ footer{text-align:center;margin-top:60px;color:var(--mut);font-weight:800;font-s
       <ul>
         <li>реакция на слова собеседника: «ты едешь в Японию? тогда…»</li>
         <li>советы и рекомендации</li>
-        <li>предложения, исходящие из текущей ситуации: «холодно — давай наденем куртку»</li>
+        <li>предложения, исходящие из текущей ситуации: «холодно, давай наденем куртку»</li>
         <li>решение говорящего, принятое на основе услышанного</li>
       </ul>
-      <div class="ex"><div class="jp"><ruby>日本<rt>にほん</rt></ruby>へ行くなら、<ruby>京都<rt>きょうと</rt></ruby>がおすすめです。</div><div class="ru">Если вы едете в Японию, рекомендую Киото.</div></div>
+      <div class="ex"><div class="jp"><ruby>日本<rt>にほん</rt></ruby>へ<ruby>行<rt>い</rt></ruby>くなら、<ruby>京都<rt>きょうと</rt></ruby>がおすすめです。</div><div class="ru">Если вы едете в Японию, рекомендую Киото.</div></div>
       <div class="warn"><b>Важно:</b> условие уже известно. Если речь о гипотезе или общем принципе, лучше подойдут たら или ば.</div>
     </div>
   </div>
@@ -157,10 +219,10 @@ footer{text-align:center;margin-top:60px;color:var(--mut);font-weight:800;font-s
       <p>Выражает то, что происходит <b>всегда</b> при определённом условии. Это законы природы, устройство механизмов, привычки и маршруты: одно неизбежно ведёт к другому.</p>
       <h4>Когда использовать</h4>
       <ul>
-        <li>природные законы и явления: «вода замерзает — становится льдом»</li>
-        <li>работа механизмов: «нажмёшь кнопку — дверь откроется»</li>
-        <li>постоянные привычки: «каждое утро пью кофе — и голова ясная»</li>
-        <li>описание маршрута: «пойдёте прямо — будет банк»</li>
+        <li>природные законы и явления: «вода замерзает, становится льдом»</li>
+        <li>работа механизмов: «нажмёшь кнопку, дверь откроется»</li>
+        <li>постоянные привычки: «каждое утро пью кофе, и голова ясная»</li>
+        <li>описание маршрута: «пойдёте прямо, будет банк»</li>
       </ul>
       <div class="ex"><div class="jp"><ruby>春<rt>はる</rt></ruby>になると、<ruby>桜<rt>さくら</rt></ruby>が<ruby>咲<rt>さ</rt></ruby>きます。</div><div class="ru">Весной всегда цветёт сакура.</div></div>
       <div class="warn"><b>Нельзя:</b> использовать с просьбами, приказами и предложениями («…と、行こう» — ошибка). Также と не подходит для одного конкретного события, кроме случаев внезапного открытия.</div>
@@ -173,7 +235,7 @@ footer{text-align:center;margin-top:60px;color:var(--mut);font-weight:800;font-s
       <p>Общее или гипотетическое условие, часто книжное и формальное. Связь «условие → результат» не привязана к одному моменту, а описывает принцип, правило или общее положение дел.</p>
       <h4>Когда использовать</h4>
       <ul>
-        <li>общие истины и принципы: «если стараться — получится»</li>
+        <li>общие истины и принципы: «если стараться, получится»</li>
         <li>формальная речь, письменность, объяснения</li>
         <li>конструкция «чем больше…, тем…»: <b>〜ば〜ほど</b></li>
       </ul>
@@ -185,27 +247,66 @@ footer{text-align:center;margin-top:60px;color:var(--mut);font-weight:800;font-s
 </section>
 
 <section id="compare">
-<div class="cmp">
-  <table>
-    <tr><td></td><th class="h1">たら</th><th class="h2">なら</th><th class="h3">と</th><th class="h4">ば</th></tr>
-    <tr><td>Основа условия</td><td>конкретное событие</td><td>известная ситуация</td><td>закон, механизм</td><td>общий принцип</td></tr>
-    <tr><td>Просьба, приказ</td><td class="yes">✔ можно</td><td class="yes">✔ можно</td><td class="no">✘ нельзя</td><td class="no">✘ нельзя</td></tr>
-    <tr><td>Одно прошлое событие</td><td class="yes">✔ да</td><td class="no">✘ обычно нет</td><td>только неожиданное открытие</td><td class="no">✘ нет</td></tr>
-    <tr><td>Регулярно, всегда</td><td class="no">✘ лучше не</td><td class="no">✘ нет</td><td class="yes">✔ идеально</td><td class="yes">✔ да</td></tr>
-    <tr><td>Стиль</td><td>разговорный</td><td>разговорный</td><td>нейтральный</td><td>формальный</td></tr>
-  </table>
-  <div class="algo">
-    <div class="step" style="--c:var(--coral)"><b>たら</b><span>Просьба, совет после действия или конкретное будущее событие? Берите たら.</span></div>
-    <div class="step" style="--c:var(--teal)"><b>なら</b><span>Собеседник сказал факт, и вы реагируете на него советом или предложением? Берите なら.</span></div>
-    <div class="step" style="--c:var(--violet)"><b>と</b><span>Закон природы, механизм, маршрут или привычка, которая повторяется всегда? Берите と.</span></div>
-    <div class="step" style="--c:var(--amber)"><b>ば</b><span>Общий принцип, формальный стиль или «чем…, тем…»? Берите ば.</span></div>
+<div class="cmpgrid">
+  <div class="cc" style="--c:var(--coral)">
+    <div class="cc-h"><b>たら</b><span>конкретный случай</span></div>
+    <div class="cc-b">
+      <div class="row">Просьба или совет <span class="tag y">можно</span></div>
+      <div class="row">Одно событие в прошлом <span class="tag y">да</span></div>
+      <div class="row">Что-то всегда, по привычке <span class="tag n">нет</span></div>
+      <div class="row">Общий закон <span class="tag n">нет</span></div>
+      <div class="cc-ex">Главный вопрос: «Что будет, когда это случится?»</div>
+    </div>
   </div>
+
+  <div class="cc" style="--c:var(--teal)">
+    <div class="cc-h"><b>なら</b><span>известная ситуация</span></div>
+    <div class="cc-b">
+      <div class="row">Просьба или совет <span class="tag y">можно</span></div>
+      <div class="row">Одно событие в прошлом <span class="tag n">обычно нет</span></div>
+      <div class="row">Что-то всегда, по привычке <span class="tag n">нет</span></div>
+      <div class="row">Реакция на слова собеседника <span class="tag y">да</span></div>
+      <div class="cc-ex">Главный вопрос: «Что я думаю, если это правда?»</div>
+    </div>
+  </div>
+
+  <div class="cc" style="--c:var(--violet)">
+    <div class="cc-h"><b>と</b><span>закон и механизм</span></div>
+    <div class="cc-b">
+      <div class="row">Просьба или совет <span class="tag n">нельзя</span></div>
+      <div class="row">Одно событие в прошлом <span class="tag m">только открытие</span></div>
+      <div class="row">Что-то всегда, по привычке <span class="tag y">идеально</span></div>
+      <div class="row">Природа, механизмы, маршруты <span class="tag y">да</span></div>
+      <div class="cc-ex">Главный вопрос: «Это происходит всегда?»</div>
+    </div>
+  </div>
+
+  <div class="cc" style="--c:var(--amber)">
+    <div class="cc-h"><b>ば</b><span>общее правило</span></div>
+    <div class="cc-b">
+      <div class="row">Просьба или приказ <span class="tag n">нельзя</span></div>
+      <div class="row">Одно событие в прошлом <span class="tag n">нет</span></div>
+      <div class="row">Что-то всегда, по привычке <span class="tag y">да</span></div>
+      <div class="row">Формальный или книжный стиль <span class="tag y">да</span></div>
+      <div class="cc-ex">Главный вопрос: «Это правило или принцип?»</div>
+    </div>
+  </div>
+</div>
+
+<div class="legend">
+  <h3>Как выбрать за 4 шага</h3>
+  <ol>
+    <li><b>Просьба, совет или конкретное будущее событие?</b> Берите たら.</li>
+    <li><b>Собеседник сказал факт, и вы на него реагируете?</b> Берите なら.</li>
+    <li><b>Закон природы, механизм, маршрут, привычка «всегда»?</b> Берите と.</li>
+    <li><b>Общий принцип, формальный текст, «чем…, тем…»?</b> Берите ば.</li>
+  </ol>
 </div>
 </section>
 
 <section id="quiz">
 <div class="qwrap">
-  <div class="prog"><span id="cnt">1 / 23</span><span id="scr">Счёт: 0</span></div>
+  <div class="prog"><span id="cnt">1 / 36</span><span id="scr">Счёт: 0</span></div>
   <div class="bar"><i id="bar"></i></div>
   <div class="qcard" id="qcard"></div>
 </div>
@@ -216,33 +317,46 @@ footer{text-align:center;margin-top:60px;color:var(--mut);font-weight:800;font-s
 
 <script>
 const Q0=[
-{q:"春{はる}＿＿、桜{さくら}が咲{さ}きます。",o:["になると","になったら","になれば","になるなら"],a:0,e:"Весной сакура цветёт каждый год — это природная закономерность, которая происходит всегда. Поэтому нужна форма <b>と</b>. <b>たら</b> описывает одно конкретное событие, а не закон. <b>なら</b> требует известной ситуации, которой здесь нет. <b>ば</b> звучит как общий принцип и тоже не подходит к такому естественному явлению."},
-{q:"駅{えき}に着＿＿、電話{でんわ}してください。",o:["いたら","いけば","いたなら","くと"],a:0,e:"Здесь две части: сначала вы прибываете на вокзал, потом звоните. Это просьба, а значит, нужна <b>たら</b>. Формы <b>と</b> и <b>ば</b> с просьбами не работают, а <b>なら</b> обычно требует известной информации, поэтому здесь звучит неестественно."},
-{q:"日本{にほん}へ行く＿＿、京都{きょうと}がおすすめです。",o:["なら","たら","と","ば"],a:0,e:"Собеседник сказал, что едет в Японию. Вы не описываете будущее событие и не говорите о законе природы. Вы берёте эту информацию как отправную точку и даёте совет. Это классический случай <b>なら</b>. <b>たら</b> здесь прозвучало бы как гипотеза, а не реакция на услышанное."},
-{q:"努力{どりょく}＿＿、必{かなら}ず合格{ごうかく}できます。",o:["すれば","するなら","したら","すると"],a:0,e:"Это общее правило: если стараться, результат будет. Такие утверждения оформляются через <b>ば</b>. <b>なら</b> предполагает известную ситуацию, а здесь речь о принципе. <b>たら</b> указывает на конкретное событие, а <b>と</b> на механическую или природную связь, поэтому они не подходят."},
-{q:"毎朝{まいあさ}コーヒーを飲む＿＿、頭{あたま}がすっきりします。",o:["と","たら","なら","ば"],a:0,e:"Каждый раз, когда вы пьёте кофе утром, голова проясняется. Это постоянная, повторяющаяся связь, то есть привычка. Такие ситуации выражаются через <b>と</b>. <b>たら</b> подходит к одному событию, а не к регулярному результату. Поэтому ответ именно <b>と</b>."},
-{q:"雨{あめ}が降＿＿、試合{しあい}は中止{ちゅうし}になりました。",o:["ったら","れば","ると","るなら"],a:0,e:"Речь о конкретном случае в прошлом: в этот раз пошёл дождь, и матч отменили. Для однократного события в прошлом подходит <b>たら</b>. <b>ば</b> и <b>と</b> описывают общие связи и привычные результаты, а не единичный факт. <b>なら</b> здесь тоже не подходит, так как нет известной информации, на которую реагируют."},
-{q:"宿題{しゅくだい}が終＿＿、遊{あそ}びに行ってもいい？",o:["わったら","われば","わると","わるなら"],a:0,e:"Вы спрашиваете разрешение, которое зависит от конкретного действия: сначала домашнее задание, потом прогулка. Это <b>たら</b>, потому что действие должно завершиться. <b>と</b> и <b>ば</b> звучат как общие правила, а <b>なら</b> предполагает ситуацию, которую вы уже знаете."},
-{q:"熱{ねつ}がある＿＿、今日{きょう}は休{やす}みましょう。",o:["なら","たら","と","ば"],a:0,e:"Вы знаете, что у собеседника температура, и предлагаете ему отдохнуть. Это реакция на известную ситуацию, поэтому нужна <b>なら</b>. <b>たら</b> подошло бы для гипотезы, а <b>と</b> и <b>ば</b> для общих правил, которые здесь не при чём."},
-{q:"この道{みち}をまっすぐ行く＿＿、右{みぎ}に郵便局{ゆうびんきょく}があります。",o:["と","たら","なら","ば"],a:0,e:"Это описание маршрута. Каждый раз, когда вы идёте прямо, справа окажется почта. Результат всегда один и тот же, и это свойство дороги. Поэтому используется <b>と</b>. Форма <b>たら</b> описала бы один конкретный случай, а не постоянное расположение."},
-{q:"試験{しけん}に合格＿＿、旅行{りょこう}に行きます。",o:["したら","すれば","すると","するなら"],a:0,e:"Речь о конкретном будущем событии, которое случится однажды: сдам экзамен, и тогда поеду. Такие ситуации выражаются через <b>たら</b>. <b>ば</b> звучит как общее правило, <b>と</b> как закон природы, а <b>なら</b> требует уже известной информации, которой пока нет."},
-{q:"寒{さむ}い＿＿、コートを着{き}ようか。",o:["なら","と","たら","ば"],a:0,e:"Вы видите текущую ситуацию (холодно) и предлагаете надеть пальто. Реакция на известное состояние дел выражается через <b>なら</b>. <b>と</b> и <b>ば</b> описывают общие связи, <b>たら</b> — гипотетическое или будущее событие, а здесь всё происходит прямо сейчас."},
-{q:"もし宝くじ{たからくじ}に当{あ}たっ＿＿、世界一周{せかいいっしゅう}旅行{りょこう}をしたい。",o:["たら","ば","と","なら"],a:0,e:"Это гипотеза о конкретном событии: «если я выиграю в лотерею». Для таких «если бы» с конкретным случаем естественнее всего <b>たら</b>. <b>ば</b> тоже возможно в книжной речи, но <b>たら</b> звучит живее. <b>と</b> описывает закономерность, а <b>なら</b> требует известного факта."},
-{q:"時間{じかん}がある＿＿、一緒{いっしょ}に行きましょう。",o:["なら","と","ば","たら"],a:0,e:"Вы приглашаете человека, основываясь на том, что у него есть время. Это известная ситуация, и говорящий реагирует на неё предложением. Поэтому используется <b>なら</b>. <b>と</b> описывает закон, <b>ば</b> общий принцип, а <b>たら</b> конкретное будущее событие, которое здесь не подразумевается."},
-{q:"ボタンを押＿＿、ドアが開{あ}きます。",o:["すと","したら","すれば","するなら"],a:0,e:"Это устройство механизма: нажатие кнопки всегда приводит к открытию двери. Механические зависимости выражаются через <b>と</b>. <b>たら</b> указывало бы на отдельный случай, <b>ば</b> на общее правило в формальном стиле, а <b>なら</b> требует известной ситуации."},
-{q:"体{からだ}に悪{わる}い＿＿、やめたほうがいいですよ。",o:["なら","と","ば","たら"],a:0,e:"Собеседник сообщил информацию: это вредно для здоровья. Вы реагируете на неё советом. Это классическая ситуация для <b>なら</b>. <b>と</b> и <b>ば</b> описывают общие связи, а <b>たら</b> гипотетическое событие, которого здесь нет."},
-{q:"水{みず}を温{あたた}める＿＿、お湯{ゆ}になります。",o:["と","たら","なら","ば"],a:0,e:"Это физический процесс: нагрев всегда превращает воду в горячую воду. Законы природы и физические процессы выражаются через <b>と</b>. <b>たら</b> описало бы конкретный единичный случай, <b>ば</b> — общее условие в книжном стиле, а <b>なら</b> — известную ситуацию."},
-{q:"大人{おとな}になっ＿＿、何{なに}になりたい？",o:["たら","ば","と","なら"],a:0,e:"Речь о будущем событии, которое произойдёт однажды: когда вы станете взрослыми. Это конкретный момент в жизни, поэтому используется <b>たら</b>. <b>ば</b> звучит как общее правило, <b>と</b> как закон, а <b>なら</b> требует уже известной информации."},
-{q:"日本{にほん}に住{す}んでいる＿＿、この店{みせ}を知っているでしょう。",o:["なら","たら","と","ば"],a:0,e:"Вы опираетесь на то, что собеседник живёт в Японии, то есть на известную информацию, и делаете вывод. Для такой реакции на уже известное используется <b>なら</b>. <b>たら</b> описало бы будущее событие, а <b>と</b> и <b>ば</b> — общие связи."},
-{q:"来年{らいねん}日本{にほん}に行っ＿＿、京都{きょうと}に行きたい。",o:["たら","ば","と","なら"],a:0,e:"Речь о конкретной будущей поездке: в следующем году вы поедете в Японию. Это однократное событие, которое сначала должно произойти, поэтому выбираем <b>たら</b>. <b>なら</b> требует известного факта, а <b>と</b> и <b>ば</b> описывают общие связи."},
-{q:"会議{かいぎ}が終わっ＿＿、メールを送{おく}ってください。",o:["たら","ば","と","なら"],a:0,e:"Это просьба: сначала закончится совещание, потом нужно отправить письмо. Просьба после конкретного действия выражается через <b>たら</b>. <b>と</b> и <b>ば</b> с просьбами не работают, а <b>なら</b> здесь прозвучало бы как реакция на уже известный факт."},
-{q:"暑{あつ}い＿＿、窓{まど}を開けましょう。",o:["なら","と","たら","ば"],a:0,e:"Вы видите текущее состояние (жарко) и предлагаете открыть окно. Это предложение, основанное на известной ситуации, поэтому используется <b>なら</b>. <b>と</b> и <b>ば</b> описывают общие связи, а <b>たら</b> гипотетическое будущее событие."},
-{q:"学校{がっこう}を卒業{そつぎょう}した＿＿、何{なに}をしますか。",o:["たら","ば","と","なら"],a:0,e:"Речь о конкретном будущем событии — окончании школы. Такой момент, который однажды наступит, выражается через <b>たら</b>. <b>ば</b> звучит как общий принцип, <b>と</b> как закон природы, а <b>なら</b> требует уже известной информации."},
-{q:"日{ひ}が暮{く}れる＿＿、星{ほし}が見{み}えてくる。",o:["と","たら","なら","ば"],a:0,e:"Это природное явление: каждый вечер, когда солнце садится, появляются звёзды. Естественный порядок событий выражается через <b>と</b>. <b>たら</b> описало бы конкретный единичный случай, <b>ば</b> общее условие, а <b>なら</b> известную ситуацию."}
+{q:"春{はる}＿＿、桜{さくら}が咲{さ}きます。",o:["になると","になったら","になれば","になるなら"],ok:["になると","になれば","になったら"],t:"Весной цветёт сакура.",e:"Тут нужна <b>と</b>. Весна приходит каждый год, и сакура цветёт всегда, это закон природы. <b>ば</b> (になれば) тоже подходит. Причина: это тоже общее правило, «когда наступит весна, обычно цветёт сакура». <b>たら</b> (になったら) тоже подходит. Причина: это про конкретный момент, «когда весна наступит, сакура зацветёт». <b>なら</b> не подходит. Причина: なら значит «раз уж так», а здесь никто ничего не говорил."},
+{q:"駅{えき}に＿＿、電話{でんわ}してください。",o:["着{つ}いたら","着{つ}けば","着{つ}いたなら","着{つ}くと"],ok:["着{つ}いたら","着{つ}いたなら"],t:"Когда приедете на вокзал, позвоните мне.",e:"Тут нужна <b>たら</b>. Сначала вы приедете, потом позвоните. <b>なら</b> (着いたなら) тоже подходит. Причина: なら значит «если ты уже приехал», вы считаете, что человек почти на месте. <b>ば</b> не подходит. Причина: ば описывает общее правило, а просьба им не является. <b>と</b> не подходит. Причина: と не работает с просьбами."},
+{q:"日本{にほん}へ＿＿、京都{きょうと}がおすすめです。",o:["行{い}くなら","行{い}ったら","行{い}くと","行{い}けば"],ok:["行{い}くなら","行{い}ったら"],t:"Если вы едете в Японию, рекомендую Киото.",e:"Тут нужна <b>なら</b>. Собеседник уже сказал, что едет в Японию, и вы отвечаете на это. <b>たら</b> (行ったら) тоже подходит. Причина: это значит «когда доедешь», то есть про то же событие, но без опоры на его слова. <b>と</b> не подходит. Причина: と значит «всегда», а тут речь о конкретной поездке. <b>ば</b> (行けば) не подходит. Причина: ば звучит как общее правило, а здесь вы отвечаете на сказанное."},
+{q:"努力{どりょく}＿＿、必{かなら}ず合格{ごうかく}できます。",o:["すれば","するなら","したら","すると"],ok:["すれば","したら"],t:"Если стараться, обязательно сдадите.",e:"Тут нужна <b>ば</b>. Это общее правило: если стараться, то получится. <b>たら</b> (したら) тоже подходит. Причина: это значит «если вы сейчас постараетесь», то есть конкретный случай. <b>なら</b> не подходит. Причина: никто не говорил, что человек уже старается. <b>と</b> не подходит. Причина: и это не закон, что усилия всегда ведут к успеху."},
+{q:"毎朝{まいあさ}コーヒーを飲{の}む＿＿、頭{あたま}がすっきりします。",o:["飲{の}むと","飲{の}んだら","飲{の}めば","飲{の}むなら"],ok:["飲{の}むと","飲{の}めば"],t:"Если каждое утро пить кофе, голова становится ясной.",e:"Тут нужна <b>と</b>. Каждое утро кофе, и голова становится ясной. Это повторяется всегда, это привычка. <b>ば</b> (飲めば) тоже подходит. Причина: это общее правило, «если пить кофе, голова ясная». <b>たら</b> (飲んだら) тоже можно сказать. Причина: но тогда речь про один конкретный случай, а не про привычку, поэтому звучит хуже. <b>なら</b> не подходит. Причина: никто не говорил, что вы пьёте кофе."},
+{q:"雨{あめ}が＿＿、試合{しあい}は中止{ちゅうし}になりました。",o:["降{ふ}ったら","降{ふ}れば","降{ふ}ると","降{ふ}るなら"],ok:["降{ふ}ったら"],t:"Пошёл дождь, и матч отменили.",e:"Тут только <b>たら</b>. Событие было один раз, в прошлом: пошёл дождь, и матч отменили. <b>ば</b> не подходит. Причина: ば говорит про общее правило, а это один случай. <b>と</b> не подходит. Причина: と значит «всегда», а тут единичный факт. <b>なら</b> не подходит. Причина: это не ответ на слова собеседника."},
+{q:"宿題{しゅくだい}が＿＿、遊{あそ}びに行{い}ってもいい？",o:["終{お}わったら","終{お}われば","終{お}わると","終{お}わるなら"],ok:["終{お}わったら"],t:"Можно пойти гулять, когда закончу домашку?",e:"Тут <b>たら</b>. Сначала вы делаете домашку, потом идёте гулять. Это одно конкретное дело. <b>ば</b> (終われば) звучит плохо в вопросе «можно ли». Причина: ば звучит как общее правило, а просьба о разрешении — конкретная ситуация. <b>と</b> не подходит. Причина: と значит «каждый раз», а это разовое разрешение. <b>なら</b> не подходит. Причина: это не реакция на то, что вы уже знаете."},
+{q:"熱{ねつ}が＿＿、今日{きょう}は休{やす}みましょう。",o:["あるなら","あれば","あったら","あると"],ok:["あるなら","あれば","あったら"],t:"Если у тебя температура, давай сегодня отдохнём.",e:"Тут <b>なら</b>. Вы уже знаете, что у человека температура, и советуете отдохнуть. <b>ば</b> (あれば) тоже подходит. Причина: это значит «если окажется, что есть», условие то же самое. <b>たら</b> (あったら) тоже подходит. Причина: тоже «если окажется», но звучит чуть менее уверенно. <b>と</b> не подходит. Причина: и это не правило, а совет."},
+{q:"この道{みち}を＿＿、右{みぎ}に郵便局{ゆうびんきょく}があります。",o:["まっすぐ行{い}くと","まっすぐ行{い}ったら","まっすぐ行{い}くなら","まっすぐ行{い}ったなら"],ok:["まっすぐ行{い}くと","まっすぐ行{い}ったら"],t:"По этой дороге прямо, и справа будет почта.",e:"Тут <b>と</b>. Дорога всегда одинаковая: идёте прямо и справа будет почта. <b>たら</b> (行ったら) тоже подходит. Причина: это значит «когда дойдёте прямо, будет почта», про момент, когда вы дойдёте. <b>なら</b> не подходит. Причина: нет ответа на чьи-то слова. <b>ば</b> не подходит. Причина: это описание конкретной дороги, а не общее правило."},
+{q:"試験{しけん}に＿＿、旅行{りょこう}に行{い}きます。",o:["合格{ごうかく}したら","合格{ごうかく}すれば","合格{ごうかく}すると","合格{ごうかく}するなら"],ok:["合格{ごうかく}したら","合格{ごうかく}すれば"],t:"Сдам экзамен, и тогда поеду в путешествие.",e:"Тут <b>たら</b>. Экзамен — это конкретное событие в будущем, сначала сдадите, потом поедете. <b>ば</b> (合格すれば) тоже подходит. Причина: это значит «если сдадите», условие то же самое. <b>と</b> не подходит. Причина: и тут нет закона. <b>なら</b> не подходит. Причина: экзамен ещё не сдан, а なら опирается на известное."},
+{q:"外{そと}は＿＿、コートを着{き}ようか。",o:["寒{さむ}いなら","寒{さむ}ければ","寒{さむ}かったら","寒{さむ}いと"],ok:["寒{さむ}いなら","寒{さむ}ければ","寒{さむ}かったら"],t:"Если на улице холодно, наденем пальто?",e:"Тут <b>なら</b>. Вы видите, что холодно, и предлагаете надеть пальто. <b>ば</b> (寒ければ) тоже подходит. Причина: это значит «если холодно», условие то же. <b>たら</b> (寒かったら) тоже подходит. Причина: это значит «если окажется, что холодно». <b>と</b> не подходит. Причина: と значит «всегда, когда холодно», а тут предложение."},
+{q:"もし宝{たから}くじに＿＿、世界一周{せかいいっしゅう}旅行{りょこう}をしたい。",o:["当{あ}たったら","当{あ}たれば","当{あ}たると","当{あ}たるなら"],ok:["当{あ}たったら","当{あ}たれば"],t:"Если я выиграю в лотерею, хочу кругосветное путешествие.",e:"Тут <b>たら</b>. Это мечта про конкретное событие: «если я выиграю». <b>ば</b> (当たれば) тоже подходит. Причина: это значит «если выиграю», то же условие, просто звучит книжнее. <b>と</b> не подходит. Причина: и тут нет закона, что лотерея всегда выигрывается. <b>なら</b> не подходит. Причина: никто не говорил, что вы выиграли."},
+{q:"時間{じかん}が＿＿、一緒{いっしょ}に行{い}きましょう。",o:["あるなら","あれば","あったら","あると"],ok:["あるなら","あれば","あったら"],t:"Если есть время, давай пойдём вместе.",e:"Тут <b>なら</b>. Вы знаете, что у человека есть время, и приглашаете. <b>ば</b> (あれば) тоже подходит. Причина: это значит «если будет время», условие то же. <b>たら</b> (あったら) тоже подходит. Причина: это значит «если окажется, что есть время». <b>と</b> не подходит. Причина: приглашение — это не закон."},
+{q:"ボタンを＿＿、ドアが開{あ}きます。",o:["押{お}すと","押{お}したら","押{お}せば","押{お}すなら"],ok:["押{お}すと","押{お}したら","押{お}せば"],t:"Нажмёте кнопку, и дверь откроется.",e:"Тут <b>と</b>. Машина всегда работает одинаково: нажали кнопку, дверь открылась. <b>たら</b> (押したら) тоже подходит. Причина: это значит «когда нажмёте, дверь откроется», сначала действие, потом результат. <b>ば</b> (押せば) тоже подходит. Причина: это значит «если нажать, откроется», общее условие. <b>なら</b> не подходит. Причина: нужно что-то уже известное, а тут описание устройства."},
+{q:"体{からだ}に＿＿、やめたほうがいいですよ。",o:["悪{わる}いなら","悪{わる}ければ","悪{わる}いと","悪{わる}かったら"],ok:["悪{わる}いなら","悪{わる}ければ"],t:"Если это вредно для здоровья, лучше бросить.",e:"Тут <b>なら</b>. Собеседник сказал, что это вредно, и вы советуете бросить. <b>ば</b> (悪ければ) тоже подходит. Причина: это значит «если вредно», условие то же. <b>と</b> не подходит. Причина: と значит «всегда, когда вредно», а тут совет. <b>たら</b> не подходит. Причина: это не про один конкретный случай, а про свойство."},
+{q:"水{みず}を＿＿、お湯{ゆ}になります。",o:["温{あたた}めると","温{あたた}めたら","温{あたた}めれば","温{あたた}めるなら"],ok:["温{あたた}めると","温{あたた}めたら","温{あたた}めれば"],t:"Если нагреть воду, она станет горячей.",e:"Тут <b>と</b>. Нагрели воду, и она станет горячей. Так всегда, это физика. <b>たら</b> (温めたら) тоже подходит. Причина: это значит «нагрели и стало горячо», то есть после действия. <b>ば</b> (温めれば) тоже подходит. Причина: это значит «если нагреть», общее условие. <b>なら</b> не подходит. Причина: никто не говорил, что вы греете воду."},
+{q:"大人{おとな}に＿＿、何{なに}になりたい？",o:["なったら","なれば","なると","なるなら"],ok:["なったら","なれば"],t:"Кем хочешь стать, когда вырастешь?",e:"Тут <b>たら</b>. Это будущий момент: когда станете взрослыми. <b>ば</b> (なれば) тоже подходит. Причина: это значит «если станешь взрослым», условие то же. <b>なら</b> не подходит. Причина: вы ещё не взрослые, а なら опирается на то, что уже известно."},
+{q:"日本{にほん}に＿＿、この店{みせ}を知{し}っているでしょう。",o:["住{す}んでいるなら","住{す}んでいたら","住{す}んでいれば","住{す}んでいると"],ok:["住{す}んでいるなら","住{す}んでいれば"],t:"Раз ты живёшь в Японии, наверное, знаешь этот магазин.",e:"Тут <b>なら</b>. Вы знаете, что человек живёт в Японии, и делаете вывод. <b>ば</b> (住んでいれば) тоже подходит. Причина: это значит «если живёшь в Японии», условие то же. <b>たら</b> (住んでいたら) звучит иначе. Причина: это значит «если бы жил», то есть предположение, а не вывод из известного. <b>と</b> не подходит. Причина: это не общее правило."},
+{q:"来年{らいねん}日本{にほん}に＿＿、京都{きょうと}に行{い}きたい。",o:["行{い}ったら","行{い}けば","行{い}くと","行{い}くなら"],ok:["行{い}ったら","行{い}くなら"],t:"Когда в следующем году поеду в Японию, хочу в Киото.",e:"Тут <b>たら</b>. Поездка в следующем году — конкретное событие: сначала поедете, потом захотите в Киото. <b>なら</b> (行くなら) тоже подходит. Причина: это значит «раз ты едешь в Японию», вы опираетесь на план собеседника. <b>ば</b> (行けば) звучит плохо. Причина: нет связи с планом человека, поэтому звучит как просто условие без опоры. <b>と</b> не подходит. Причина: это не закон."},
+{q:"会議{かいぎ}が＿＿、メールを送{おく}ってください。",o:["終{お}わったら","終{お}われば","終{お}わると","終{お}わるなら"],ok:["終{お}わったら"],t:"Когда совещание закончится, отправьте письмо.",e:"Тут <b>たら</b>. Это просьба после конкретного события: сначала совещание закончится, потом надо отправить письмо. <b>ば</b> с просьбами звучит плохо. Причина: ば описывает общее правило, а просьба — конкретное действие. <b>と</b> не подходит. Причина: с просьбами と не работает. <b>なら</b> не подходит. Причина: なら значит «раз это известно», а тут просьба после события."},
+{q:"外{そと}が＿＿、窓{まど}を開{あ}けましょう。",o:["暑{あつ}いなら","暑{あつ}ければ","暑{あつ}かったら","暑{あつ}いと"],ok:["暑{あつ}いなら","暑{あつ}ければ","暑{あつ}かったら"],t:"Если на улице жарко, давай откроем окно.",e:"Тут <b>なら</b>. Вы видите, что жарко, и предлагаете открыть окно. <b>ば</b> (暑ければ) тоже подходит. Причина: это значит «если жарко», условие то же. <b>たら</b> (暑かったら) тоже подходит. Причина: это значит «если окажется, что жарко». <b>と</b> не подходит. Причина: и это не предложение, а закономерность."},
+{q:"学校{がっこう}を＿＿、何{なに}をしますか。",o:["卒業{そつぎょう}したら","卒業{そつぎょう}すれば","卒業{そつぎょう}すると","卒業{そつぎょう}するなら"],ok:["卒業{そつぎょう}したら","卒業{そつぎょう}すれば"],t:"Что будешь делать после окончания школы?",e:"Тут <b>たら</b>. Окончание школы — событие в будущем, которое случится один раз. <b>ば</b> (卒業すれば) тоже подходит. Причина: это значит «если окончите школу», условие то же. <b>と</b> не подходит. Причина: это не закон, что после школы всегда что-то происходит. <b>なら</b> не подходит. Причина: вы ещё не окончили школу, и ничего не известно."},
+{q:"日{ひ}が＿＿、星{ほし}が見{み}えてくる。",o:["暮{く}れると","暮{く}れたら","暮{く}れれば","暮{く}れるなら"],ok:["暮{く}れると","暮{く}れたら","暮{く}れれば"],t:"Когда стемнеет, появляются звёзды.",e:"Тут <b>と</b>. Это природа: вечер наступил, и появились звёзды. Так всегда бывает. <b>たら</b> (暮れたら) тоже подходит. Причина: это значит «когда стемнеет», про момент. <b>ば</b> (暮れれば) тоже подходит. Причина: это значит «если стемнеет», общее условие. <b>なら</b> не подходит. Причина: никто не говорил, что стемнело."},
+{q:"日本語{にほんご}の本{ほん}は＿＿、面白{おもしろ}くなる。",o:["読{よ}めば読{よ}むほど","読{よ}んだら読{よ}むほど","読{よ}むと読{よ}むほど","読{よ}むなら読{よ}むほど"],ok:["読{よ}めば読{よ}むほど"],t:"Чем больше читаешь японские книги, тем они интереснее.",e:"Тут <b>ば</b>, в конструкции <b>〜ば〜ほど</b>. Чем больше читаешь, тем интереснее становится. <b>たら</b> не подходит. Причина: эта конструкция требует ば. <b>と</b> не подходит. Причина: это тоже требует ば. <b>なら</b> не подходит. Причина: никто ничего не говорил, и это не про одно чтение."},
+{q:"ルールを＿＿、誰{だれ}でも安全{あんぜん}に使{つか}える。",o:["守{まも}れば","守{まも}るなら","守{まも}ったら","守{まも}ったなら"],ok:["守{まも}れば","守{まも}ったら"],t:"Если соблюдать правила, каждый сможет безопасно пользоваться.",e:"Тут <b>ば</b>. Это общее правило из текста: если соблюдать правила, всем будет безопасно. <b>たら</b> (守ったら) тоже подходит. Причина: это значит «когда правила соблюдены», момент. <b>なら</b> не подходит. Причина: это не ответ на известную ситуацию, а общий принцип."},
+{q:"毎日{まいにち}運動{うんどう}を＿＿、健康{けんこう}になれます。",o:["すれば","するなら","したら","したなら"],ok:["すれば","したら"],t:"Если заниматься спортом каждый день, будешь здоровее.",e:"Тут <b>ば</b>. Это общая истина: спорт делает здоровее. <b>たら</b> (したら) тоже подходит. Причина: это значит «если начнёте заниматься», один конкретный случай. <b>なら</b> не подходит. Причина: никто не говорил, что вы занимаетесь спортом."},
+{q:"最新{さいしん}の情報{じょうほう}を＿＿、より正確{せいかく}な判断{はんだん}ができる。",o:["確認{かくにん}すれば","確認{かくにん}するなら","確認{かくにん}したら","確認{かくにん}したなら"],ok:["確認{かくにん}すれば","確認{かくにん}したら"],t:"Если проверить свежие данные, можно принять более точное решение.",e:"Тут <b>ば</b>. Это формальный вывод: проверили данные, значит решение будет точнее. <b>たら</b> (確認したら) тоже подходит. Причина: это значит «после проверки», то есть конкретное действие. <b>なら</b> не подходит. Причина: здесь нет известной ситуации, на которую реагируют."},
+{q:"明日{あした}テストが＿＿、今夜は早く寝{ね}たほうがいいよ。",o:["あるなら","あれば","あったら","あると"],ok:["あるなら","あれば","あったら"],t:"Если завтра контрольная, сегодня лучше лечь пораньше.",e:"Тут <b>なら</b>. Собеседник сказал про завтрашнюю контрольную, и вы советуете лечь пораньше. <b>ば</b> (あれば) тоже подходит. Причина: это значит «если завтра контрольная», условие то же. <b>たら</b> (あったら) тоже подходит. Причина: это значит «если окажется, что есть». <b>と</b> не подходит. Причина: это не закон, а совет."},
+{q:"君{きみ}がそう＿＿、一度{いちど}やってみよう。",o:["言うなら","言えば","言ったら","言うと"],ok:["言うなら","言ったら"],t:"Раз ты так говоришь, давай попробуем.",e:"Тут <b>なら</b>. Собеседник сказал: «Давай попробуем». Вы отвечаете на его слова. <b>たら</b> (言ったら) тоже подходит. Причина: это значит «когда ты так скажешь», про момент, когда он это скажет. <b>ば</b> (言えば) звучит плохо. Причина: ば описывает общее правило, а тут вы отвечаете на уже сказанное. <b>と</b> не подходит. Причина: это не закон, что он всегда так говорит."},
+{q:"夏{なつ}が＿＿、少{すこ}しずつ涼{すず}しくなります。",o:["過{す}ぎると","過{す}ぎたら","過{す}ぎれば","過{す}ぎるなら"],ok:["過{す}ぎると","過{す}ぎたら","過{す}ぎれば"],t:"После лета постепенно становится прохладнее.",e:"Тут <b>と</b>. Лето заканчивается каждый год, и становится прохладнее. Это закономерность. <b>たら</b> (過ぎたら) тоже подходит. Причина: это значит «когда лето закончится», про момент. <b>ば</b> (過ぎれば) тоже подходит. Причина: это значит «если лето пройдёт», общее условие. <b>なら</b> не подходит. Причина: никто не говорил, что лето уже закончилось."},
+{q:"この角{かど}を右{みぎ}に＿＿、コンビニがあります。",o:["曲{ま}がると","曲{ま}がったら","曲{ま}がれば","曲{ま}がるなら"],ok:["曲{ま}がると","曲{ま}がったら","曲{ま}がれば"],t:"За этим углом направо будет магазин.",e:"Тут <b>と</b>. Это про дорогу: поворот направо, и там магазин. Дорога всегда одинаковая. <b>たら</b> (曲がったら) тоже подходит. Причина: это значит «когда повернёте, будет магазин», про момент. <b>ば</b> (曲がれば) тоже подходит. Причина: это значит «если повернёте», общее условие. <b>なら</b> не подходит. Причина: здесь нет известной информации, на которую реагируют."},
+{q:"スイッチを＿＿、ファンが回{まわ}ります。",o:["入{い}れると","入{い}れたら","入{い}れれば","入{い}れるなら"],ok:["入{い}れると","入{い}れたら","入{い}れれば"],t:"Включите, и вентилятор начнёт вращаться.",e:"Тут <b>と</b>. Работа машины: включили, и вентилятор начал крутиться. Всегда одно и то же. <b>たら</b> (入れたら) тоже подходит. Причина: это значит «когда включите», сначала действие. <b>ば</b> (入れれば) тоже подходит. Причина: это значит «если включить», общее условие. <b>なら</b> не подходит. Причина: никто не говорил, что вы включаете вентилятор."},
+{q:"原因{げんいん}が＿＿、対策{たいさく}は立{た}てやすくなる。",o:["分{わ}かれば","分{わ}かるなら","分{わ}かったら","分{わ}かると"],ok:["分{わ}かれば","分{わ}かったら","分{わ}かると"],t:"Если понять причину, меры легче продумать.",e:"Тут <b>ば</b>. Это логика: если понять причину, то меры легче придумать. <b>たら</b> (分かったら) тоже подходит. Причина: это значит «когда поймёте причину», то есть момент. <b>と</b> (分かると) тоже подходит. Причина: это значит «когда поймёте, всегда станет легче», общее следствие. <b>なら</b> не подходит. Причина: здесь речь о логике, а не о том, что вы уже знаете."},
+{q:"十分{じゅうぶん}に＿＿、仕事{しごと}の効率{こうりつ}が上{あ}がる。",o:["休{やす}めば","休{やす}むなら","休{やす}んだら","休{やす}むと"],ok:["休{やす}めば","休{やす}んだら","休{やす}むと"],t:"Достаточный отдых повышает эффективность работы.",e:"Тут <b>ば</b>. Это общее правило: достаточный отдых помогает работать лучше. <b>たら</b> (休んだら) тоже подходит. Причина: это значит «после отдыха», то есть сначала отдых. <b>と</b> (休むと) тоже подходит. Причина: это значит «каждый раз, когда отдыхаешь, работа лучше» — закономерность. <b>なら</b> не подходит. Причина: здесь нет известной ситуации."},
+{q:"＿＿、道{みち}は必{かなら}ず開{ひら}ける。",o:["諦{あきら}めなければ","諦{あきら}めたら","諦{あきら}めるなら","諦{あきら}めると"],ok:["諦{あきら}めなければ"],t:"Не сдавайся, и путь обязательно откроется.",e:"Тут <b>ば</b> с отрицанием: <b>なければ</b> значит «если не делать». Смысл: если не сдаваться, то путь откроется. <b>たら</b> не подходит. Причина: 諦めたら значит «если сдашься», и смысл выходит противоположным. <b>なら</b> не подходит. Причина: 諦めるなら значит «если решил сдаться», смысл тоже меняется. <b>と</b> не подходит. Причина: 諦めると значит «всегда, когда сдаёшься», и фраза становится неверной."},
+{q:"早{はや}く＿＿、電車{でんしゃ}に間{ま}に合{あ}う。",o:["出発{しゅっぱつ}すれば","出発{しゅっぱつ}したら","出発{しゅっぱつ}すると","出発{しゅっぱつ}するなら"],ok:["出発{しゅっぱつ}すれば","出発{しゅっぱつ}したら","出発{しゅっぱつ}すると"],t:"Если выехать пораньше, успеем на поезд.",e:"Тут <b>ば</b>. Это общее условие: если выехать раньше, то успеете на поезд. <b>たら</b> (出発したら) тоже подходит. Причина: это значит «когда выйдете, успеете», про конкретный момент. <b>と</b> (出発すると) тоже подходит. Причина: это значит «каждый раз, когда выезжаем рано, успеваем», закономерность. <b>なら</b> не подходит. Причина: здесь нет известной ситуации."}
 ];
 function fu(s){return s.replace(/([\u4e00-\u9faf々]+)\{([^}]+)\}/g,'<ruby>$1<rt>$2</rt></ruby>');}
 function shuffle(a){a=a.slice();for(let k=a.length-1;k>0;k--){const j=Math.floor(Math.random()*(k+1));[a[k],a[j]]=[a[j],a[k]];}return a;}
-function shuffleAll(){return shuffle(Q0).map(q=>{const c=q.o[q.a];const o=shuffle(q.o);return{q:fu(q.q),o:o.map(fu),a:o.indexOf(c),e:fu(q.e)};});}
+function shuffleAll(){return shuffle(Q0).map(q=>{const o=shuffle(q.o);return{q:fu(q.q),o:o.map(fu),ok:q.ok.map(t=>o.indexOf(t)),e:fu(q.e),full:fu(q.q.replace('＿＿',q.ok[0])),t:q.t};});}
 let Q=shuffleAll();
 
 const $=s=>document.querySelector(s);
@@ -250,7 +364,7 @@ const nav=document.querySelectorAll('nav button');
 nav.forEach(b=>b.onclick=()=>{nav.forEach(x=>x.classList.remove('on'));b.classList.add('on');document.querySelectorAll('section').forEach(s=>s.classList.toggle('on',s.id===b.dataset.t));window.scrollTo({top:0,behavior:'smooth'});});
 
 let i=0,score=0,done=false;
-const L=['A','B','C','D'];
+const L=['А','Б','В','Г'];
 function render(){
   if(i>=Q.length) return finish();
   const x=Q[i];done=false;
@@ -259,7 +373,7 @@ function render(){
   $('#bar').style.width=(i/Q.length*100)+'%';
   $('#qcard').innerHTML=
    '<div class="qtext">'+x.q.replace('＿＿','<span class="blank"></span>')+'</div>'+
-   '<div class="opts">'+x.o.map((t,k)=>'<button class="opt" data-k="'+k+'"><span class="k">'+L[k]+'</span><span>'+t+'</span></button>').join('')+'</div>'+
+      '<div class="opts">'+x.o.map((t,k)=>'<button class="opt" data-k="'+k+'"><span class="k">'+L[k]+'</span><span class="t">'+t+'</span></button>').join('')+'</div>'+
    '<div class="fb" id="fb"></div><button class="nextbtn" id="nx">Далее →</button>';
   document.querySelectorAll('.opt').forEach(b=>b.onclick=()=>pick(+b.dataset.k));
 }
@@ -267,25 +381,27 @@ function pick(k){
   if(done) return; done=true;
   const x=Q[i];const btns=document.querySelectorAll('.opt');
   btns.forEach(b=>b.disabled=true);
-  const ok=k===x.a; if(ok) score++;
-  btns[x.a].classList.add('right');
+  const ok=x.ok.includes(k); if(ok) score++;
+  x.ok.forEach(j=>btns[j].classList.add('right'));
   if(!ok) btns[k].classList.add('wrong');
+  const names=x.ok.map(j=>'<span class="ans">'+x.o[j]+'</span>').join(' · ');
   const fb=$('#fb');
   fb.className='fb show '+(ok?'ok':'no');
-  fb.innerHTML=(ok?'<strong>Верно! 🎉</strong> ':'<strong>Почти. Правильный ответ: </strong>'+x.o[x.a]+'. ')+'<br>'+x.e;
+  fb.innerHTML='<div class="verdict '+(ok?'vok':'vno')+'">'+(ok?'🎉 Верно!':'🤔 Почти, но не совсем')+'</div>'+'<div class="tr-card"><span class="tr-lab">Перевод</span><p>'+x.t+'</p></div>'+'<div class="why"><div class="why-h">Почему так</div>'+x.e.split(/(?<=\.)\s+/).map((sn,n)=>'<div class="pt" style="animation-delay:'+(.35+n*.12)+'s">'+sn+'</div>').join('')+'</div>';
   $('#scr').textContent='Счёт: '+score;
   const nx=$('#nx');nx.classList.add('show');
-  nx.textContent=i===Q.length-1?'Результат':'Далее →';
+  nx.textContent=i===Q.length-1?'Посмотреть результат':'Далее →';
   nx.onclick=()=>{i++;render();};
 }
 function finish(){
   $('#bar').style.width='100%';
   const p=Math.round(score/Q.length*100);
   const msg=p>=90?'Отлично! Вы уверенно различаете たら, なら, と и ば. Переходите к реальным текстам и разговорной практике.':
-            p>=65?'Хороший результат. Перечитайте раздел «Сравнение», особенно алгоритм выбора, и пройдите тест ещё раз.':
+            p>=65?'Хороший результат. Перечитайте раздел «Сравнение» и пройдите тест ещё раз, обращая внимание на ошибки.':
             'Не расстраивайтесь, это сложная тема. Начните с раздела «Теория», выпишите по два примера на каждую форму и вернитесь к тесту.';
   $('#qcard').innerHTML='<div class="result"><div class="big">'+score+' / '+Q.length+'</div><p>'+msg+'</p><button class="restart" id="rs">Пройти заново</button></div>';
   $('#rs').onclick=()=>{Q=shuffleAll();i=0;score=0;render();};
+if(p>=65){for(let n=0;n<36;n++){const c=document.createElement('span');c.className='conf';c.textContent=['✨','🌸','⭐','💛','🎉'][n%5];c.style.left=(Math.random()*100)+'vw';c.style.animationDelay=(Math.random()*.9)+'s';document.body.appendChild(c);}}
 }
 render();
 </script>
